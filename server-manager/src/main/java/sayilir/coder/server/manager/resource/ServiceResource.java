@@ -23,6 +23,7 @@ import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.IMAGE_PNG_VALUE;
 
 @RestController
+//@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/server")
 @RequiredArgsConstructor
 public class ServiceResource {
@@ -57,7 +58,7 @@ public class ServiceResource {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Response> pingServer(@RequestBody @Valid Server server) {
+    public ResponseEntity<Response> saveServer(@RequestBody @Valid Server server) {
 
         return ResponseEntity.ok(
                 Response.builder()
